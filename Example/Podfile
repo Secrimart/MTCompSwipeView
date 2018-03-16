@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MTCompSwipeView_Example' do
+  pod 'MTCompSwipeView', :path => '../'
+
+  target 'MTCompSwipeView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
