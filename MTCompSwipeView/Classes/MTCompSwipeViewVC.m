@@ -43,6 +43,10 @@
     return CGSizeMake(width, ceilf(height));
 }
 
+- (void)componentDidChangedBussData {
+    [self toReloadComponent];
+}
+
 //MARK: - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,8 +59,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    [self toReloadComponent];
+    if (self.viewModel.dataSource.count > 1) [self toOperSetAutoScroll];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
