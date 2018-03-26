@@ -26,7 +26,7 @@
     [super tearDown];
 }
 
-- (void)testToReloadDataSourceWithBussData {
+- (void)testToReloadDataSourceWithServiceData {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
@@ -53,7 +53,7 @@
     [array addObject:busData2];
     
     MTSwipeVM *vm = [[MTSwipeVM alloc] init];
-    [vm toReloadDataSourceWithBussData:@{@"array":array}];
+    [vm toReloadDataSourceWithServiceData:@{@"array":array}];
     
     XCTAssertEqual(vm.dataSource.count, 3);
     XCTAssertTrue(((MTSwipePage *)vm.dataSource[0]).index == 0);
@@ -62,7 +62,7 @@
     
 }
 
-- (void)testToReloadDataSourceWithBussDataWithArray {
+- (void)testToReloadDataSourceWithServiceDataWithArray {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
@@ -86,7 +86,7 @@
     [busData2 setObject:@(1) forKey:@"index"];
     
     MTSwipeVM *vm = [[MTSwipeVM alloc] init];
-    [vm toReloadDataSourceWithBussData:@{@"array":@[busData,busData1,busData2]}];
+    [vm toReloadDataSourceWithServiceData:@{@"array":@[busData,busData1,busData2]}];
     
     XCTAssertEqual(vm.dataSource.count, 3);
     XCTAssertTrue(((MTSwipePage *)vm.dataSource[0]).index == 0);
@@ -95,7 +95,7 @@
     
 }
 
-- (void)testToReloadDataSourceWithBussDataWithDict {
+- (void)testToReloadDataSourceWithServiceDataWithDict {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
@@ -118,7 +118,7 @@
     [busData2 setObject:@(1) forKey:@"index"];
     
     MTSwipeVM *vm = [[MTSwipeVM alloc] init];
-    [vm toReloadDataSourceWithBussData:@{@"array":@{@"page1":busData,@"page2":busData1,@"page3":busData2}}];
+    [vm toReloadDataSourceWithServiceData:@{@"array":@{@"page1":busData,@"page2":busData1,@"page3":busData2}}];
     
     XCTAssertEqual(vm.dataSource.count, 3);
     XCTAssertTrue(((MTSwipePage *)vm.dataSource[0]).index == 0);

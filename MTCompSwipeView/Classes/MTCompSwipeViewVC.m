@@ -23,7 +23,7 @@
 
 - (void)toReloadComponent {
     // 刷新业务数据
-    [self.viewModel toReloadDataSourceWithBussData:self.compBussData];
+    [self.viewModel toReloadDataSourceWithServiceData:self.compServiceData];
     
     // 刷新UI
     self.pageControl.numberOfPages = self.viewModel.dataSource.count;
@@ -43,7 +43,7 @@
     return CGSizeMake(width, ceilf(height));
 }
 
-- (void)componentDidChangedBussData {
+- (void)componentDidChangedServiceData {
     [self toReloadComponent];
 }
 
@@ -166,7 +166,7 @@
     MTSwipePage *page = [self swipePageWithIndexPath:index];
     if (page.isNativeLanding) {
         UIViewController<MTComponentProtocol> *vc = [page instanceLandingVC];
-        [vc setupComponentBussData:self.compBussData];
+        [vc setupComponentServiceData:self.compServiceData];
         [self.navigationController pushViewController:vc animated:YES];
         
     } else {

@@ -68,7 +68,7 @@
     return @[comp0,comp1,comp2];
 }
 
-- (NSArray<NSDictionary *> *)componentBussData {
+- (NSArray<NSDictionary *> *)componentServiceData {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
     NSMutableDictionary *busData = [NSMutableDictionary dictionaryWithCapacity:0];
     [busData setObject:@"page1" forKey:@"pageID"];

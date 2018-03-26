@@ -10,8 +10,8 @@
 @implementation MTSwipeVM
 
 - (void)toConstructionDataSource {
-    for (NSString *key in [self.bussData allKeys]) {
-        [self toDealSwipePageDataSourceWithValue:self.bussData[key]];
+    for (NSString *key in [self.serviceData allKeys]) {
+        [self toDealSwipePageDataSourceWithValue:self.serviceData[key]];
     }
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
     [self.dataSource sortUsingDescriptors:@[sort]];
