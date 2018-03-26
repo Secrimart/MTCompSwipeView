@@ -9,28 +9,12 @@
 
 @implementation MTSwipeVM
 
-- (void)toReloadDataSourceWithBussData:(NSDictionary *)bussData {
-    self.bussData = bussData;
-    self.dataSource = nil;
-    [self toReloadDataSourceBeforeRequest:nil onFinished:nil onFailed:nil];
-}
-
-- (void)toReloadDataSourceBeforeRequest:(VoidBlock)before onFinished:(DataSourceStatusBlock)finished onFailed:(VoidBlock)failed {
-    if (before) before();
-    
-    if (self.bussData.count == 0) {
-        if (failed) failed();
-        return;
-    }
-    
+- (void)toConstructionDataSource {
     for (NSString *key in [self.bussData allKeys]) {
         [self toDealSwipePageDataSourceWithValue:self.bussData[key]];
     }
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
     [self.dataSource sortUsingDescriptors:@[sort]];
-    
-    if (finished) finished(DataSourceStatusNormal);
-    
 }
 
 - (void)toDealSwipePageDataSourceWithValue:(id)value {

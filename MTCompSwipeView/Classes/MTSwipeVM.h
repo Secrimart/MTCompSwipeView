@@ -7,12 +7,8 @@
 
 #import "MTSwipePage.h"
 
-@import MTBaseObjects;
+@import MTComponent;
 
-@interface MTSwipeVM : MTBaseViewModel
-
-@property (nonatomic, strong) NSDictionary *bussData; // 业务数据
-
-- (void)toReloadDataSourceWithBussData:(NSDictionary *)bussData;
+@interface MTSwipeVM : MTCompVM
 
 @end
