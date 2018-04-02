@@ -78,6 +78,7 @@
         make.edges.mas_equalTo(weakSelf.view);
     }];
     
+    [self.pageControl setHidden:!(self.viewModel.dataSource.count > 1)];
     [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.mas_equalTo(weakSelf.view);
     }];
