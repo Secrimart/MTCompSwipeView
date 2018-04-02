@@ -27,6 +27,7 @@
     
     // 刷新UI
     self.pageControl.numberOfPages = self.viewModel.dataSource.count;
+    
     if (self.viewModel.dataSource.count > 1) [self toOperSetAutoScroll];
     [self.viewSwipe reloadData];
     
@@ -78,7 +79,6 @@
         make.edges.mas_equalTo(weakSelf.view);
     }];
     
-    [self.pageControl setHidden:!(self.viewModel.dataSource.count > 1)];
     [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.mas_equalTo(weakSelf.view);
     }];
@@ -116,6 +116,11 @@
 
 - (MTSwipePage *)swipePageWithIndexPath:(NSInteger)index {
     return (MTSwipePage *)self.viewModel.dataSource[index];
+}
+
+- (void)setHiddenPageControl:(BOOL)hiddenPageControl {
+    [self.pageControl setHidden:hiddenPageControl];
+    
 }
 
 - (UIImage *)swipeViewDefaultImage {

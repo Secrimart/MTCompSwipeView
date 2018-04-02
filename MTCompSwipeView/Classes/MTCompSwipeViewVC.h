@@ -12,6 +12,8 @@
 
 @interface MTCompSwipeViewVC : UIViewController<MTComponentProtocol>
 
+@property (nonatomic) BOOL hiddenPageControl; // UIPageControl是否隐藏
+
 /**
  轮播图每页中图片加载失败或未加载时显示的默认图片，子类可覆写
 
