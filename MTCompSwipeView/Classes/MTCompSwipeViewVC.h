@@ -9,8 +9,12 @@
 
 @import MTComponent;
 @import MTBaseObjects;
+@import SwipeView;
 
-@interface MTCompSwipeViewVC : UIViewController<MTComponentProtocol>
+@interface MTCompSwipeViewVC : UIViewController<MTComponentProtocol,
+SwipeViewDataSource,SwipeViewDelegate>
+
+@property (nonatomic, strong) SwipeView *viewSwipe; // 轮播视图
 
 @property (nonatomic) BOOL hiddenPageControl; // UIPageControl是否隐藏
 

@@ -8,11 +8,9 @@
 #import "MTCompSwipeViewVC.h"
 #import "MTSwipeVM.h"
 
-@import SwipeView;
 @import SDWebImage;
 
-@interface MTCompSwipeViewVC ()<SwipeViewDataSource,SwipeViewDelegate>
-@property (nonatomic, strong) SwipeView *viewSwipe; // 轮播视图
+@interface MTCompSwipeViewVC ()
 @property (nonatomic, strong) UIPageControl *pageControl; // 分页组件
 
 @property (nonatomic, strong) MTSwipeVM *viewModel; // 视图模型
