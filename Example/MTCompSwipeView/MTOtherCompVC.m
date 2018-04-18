@@ -9,7 +9,7 @@
 #import "MTOtherCompVC.h"
 
 @import Masonry;
-@import JLFramework;
+@import MTFramework;
 
 @interface MTOtherCompVC ()
 @property (nonatomic, strong) UILabel *labShowData;
